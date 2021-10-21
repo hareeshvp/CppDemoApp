@@ -4,7 +4,7 @@
 int subfunction2(int value) {
 
     printf("Welcome to Sub function 2. Argument value is %d \n", value);
-
+/*
     char* newStringInSub = (char*)malloc(10);
 
     switch (value)
@@ -28,7 +28,7 @@ int subfunction2(int value) {
     }
 
     free(newStringInSub);
-
+*/
     printf("End of Sub function 2.\n");
     return 0;
 }
