@@ -1,5 +1,7 @@
 # CppDemoApp
 
+cov-configure --msvc
+
 
 cov-build --dir iDir msbuild.exe CppDemoApp.vcxproj /t:rebuild
 
