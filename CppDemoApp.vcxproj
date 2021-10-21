@@ -140,6 +140,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="CppDemoApp.cpp" />
+    <ClCompile Include="CppDemoSubFunction1.cpp" />
+    <ClCompile Include="CppDemoSubFunction2.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
