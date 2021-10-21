@@ -1,20 +1,52 @@
-// CppDemoApp.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include <stdio.h>
+#include <stdlib.h>
 
-#include <iostream>
+extern int subfunction(int value);
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    int* ptr;
+    int n, i;
+
+    printf("Welcome to main function\n");
+
+    n = 10;
+    printf("Number of elements: %d\n", n);
+
+    // Dynamically allocate memory using malloc()
+    ptr = (int*)malloc(n * sizeof(int));
+
+
+    char* newStringInMain = (char*)malloc(10);
+
+    // Check if the memory has been successfully
+    // allocated by malloc or not
+    if (ptr == NULL) {
+        printf("Memory not allocated.\n");
+        exit(0);
+    }
+    else {
+
+        // Memory has been successfully allocated
+        printf("Memory successfully allocated using malloc.\n");
+
+        // Get the elements of the array
+        for (i = 0; i < n; ++i) {
+            ptr[i] = i + 1;
+        }
+
+        // Calling sub function 
+
+        // Print the elements of the array
+        printf("The elements of the array are: ");
+        for (i = 0; i < n; ++i) {
+            printf("%d, ", ptr[i]);
+            subfunction(ptr[i]);
+        }
+    }
+
+    free(newStringInMain);
+
+    printf("End of main function\n");
+    return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
